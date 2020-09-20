@@ -6,6 +6,7 @@ void main() {
     systemNavigationBarColor: Colors.white,
     statusBarColor: Colors.white,
   ));
+  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
   runApp(MyApp());
 }
 
@@ -179,7 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => TrendingScreen()),
+                                  builder: (context) => ArticleScreen()),
                             );
                           },
                           child: Container(
@@ -763,6 +764,127 @@ class TrendingScreen extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ArticleScreen extends StatelessWidget {
+  @override
+  void main() {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.white,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(
+          color: Colors.black87,
+        ),
+      ),
+      body: Container(
+        margin: const EdgeInsets.only(
+          left: 15.0,
+          right: 15.0,
+        ),
+        child: Column(
+          children: [
+            Container(
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                top: 15.0,
+              ),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'September 9, 2020',
+                  style: TextStyle(
+                    color: Colors.black54,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 220.0,
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.only(
+                top: 15.0,
+                bottom: 30.0,
+              ),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Container(
+                  margin: const EdgeInsets.all(15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 5.0),
+                        child: Text(
+                          'Posted by',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.75),
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 3.0),
+                        child: Text(
+                          'John Uberbacher',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: new BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                  image: DecorationImage(
+                      colorFilter: new ColorFilter.mode(
+                          Colors.black.withOpacity(0.75), BlendMode.dstATop),
+                      image: AssetImage("assets/images/nfl-stock.png"),
+                      fit: BoxFit.cover)),
+            ),
+            Container(
+              child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Quis enim lobortis scelerisque fermentum dui faucibus in ornare. In nulla posuere sollicitudin aliquam ultrices sagittis. Vitae purus faucibus ornare suspendisse sed nisi lacus sed. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Eu augue ut lectus arcu bibendum at varius vel pharetra. Id consectetur purus ut faucibus pulvinar. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Eu turpis egestas pretium aenean. Amet purus gravida quis blandit turpis cursus in. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Dapibus ultrices in iaculis nunc sed augue lacus viverra vitae. "),
             ),
           ],
         ),

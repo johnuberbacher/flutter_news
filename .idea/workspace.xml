@@ -42,22 +42,22 @@
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
     <state x="-1180" y="264" key="FileChooserDialogImpl/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600568013220" />
-    <state width="1340" height="277" key="GridCell.Tab.0.bottom" timestamp="1600617534007">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1600628696712">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1340" height="277" key="GridCell.Tab.0.bottom/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600617534007" />
-    <state width="1340" height="277" key="GridCell.Tab.0.center" timestamp="1600617534006">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696712" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1600628696712">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1340" height="277" key="GridCell.Tab.0.center/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600617534006" />
-    <state width="1340" height="277" key="GridCell.Tab.0.left" timestamp="1600617534006">
+    <state width="1877" height="277" key="GridCell.Tab.0.center/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696712" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1600628696711">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1340" height="277" key="GridCell.Tab.0.left/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600617534006" />
-    <state width="1340" height="277" key="GridCell.Tab.0.right" timestamp="1600617534007">
+    <state width="1877" height="277" key="GridCell.Tab.0.left/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696711" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1600628696712">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1340" height="277" key="GridCell.Tab.0.right/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600617534007" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696712" />
     <state x="-1459" y="152" key="SettingsEditor" timestamp="1600568057112">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
@@ -70,18 +70,22 @@
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
     <state x="-1048" y="487" key="com.intellij.ide.util.TipDialog/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600568129113" />
+    <state x="-1297" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1600628149813">
+      <screen x="-1920" y="0" width="1920" height="1019" />
+    </state>
+    <state x="-1297" y="219" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628149813" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/main.dart</url>
-          <line>116</line>
+          <line>117</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/main.dart</url>
-          <line>367</line>
+          <line>369</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
