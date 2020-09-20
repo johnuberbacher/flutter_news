@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle());
   runApp(MyApp());
 }
 
@@ -19,6 +21,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         appBarTheme: AppBarTheme(
           color: Color(0xFFFFFFFF),
+          elevation: 0,
         ),
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -40,81 +43,117 @@ class _MyHomePageState extends State<MyHomePage> {
       // The number of tabs / content sections to display.
       length: 5,
       child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(
-            isScrollable: true,
-            tabs: [
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15.0,
-                    horizontal: 15.0,
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(120),
+          child: AppBar(
+            title: Container(
+              margin: const EdgeInsets.only(
+                top: 11.0,
+              ),
+              height: 45.0,
+              alignment: Alignment.centerLeft,
+              color: Colors.white,
+              child: TextField(
+                style: TextStyle(
+                  height: 3.1,
+                ),
+                decoration: InputDecoration(
+                  hintText: 'Search',
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.only(
+                      right: 20.0,
+                    ),
+                    child: Icon(Icons.search),
                   ),
-                  child: Text(
-                    "World",
-                    style: TextStyle(
-                      color: Colors.black87,
+                  filled: true,
+                  fillColor: Color(0xFFFFFFFF),
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 20.0,
+                    horizontal: 25.0,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30),
+                    ),
+                    borderSide: BorderSide(
+                      color: Colors.blueGrey.withOpacity(0.15),
+                    ),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30),
+                    ),
+                    borderSide: BorderSide(
+                      color: Colors.grey.withOpacity(0.15),
                     ),
                   ),
                 ),
               ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15.0,
-                    horizontal: 15.0,
-                  ),
-                  child: Text(
-                    "World",
-                    style: TextStyle(
-                      color: Colors.black87,
+            ),
+            bottom: TabBar(
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey,
+              indicatorColor: Colors.transparent,
+              isScrollable: true,
+              tabs: [
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15.0,
+                      horizontal: 15.0,
+                    ),
+                    child: Text(
+                      "World",
                     ),
                   ),
                 ),
-              ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15.0,
-                    horizontal: 15.0,
-                  ),
-                  child: Text(
-                    "World",
-                    style: TextStyle(
-                      color: Colors.black87,
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15.0,
+                      horizontal: 15.0,
+                    ),
+                    child: Text(
+                      "Business",
                     ),
                   ),
                 ),
-              ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15.0,
-                    horizontal: 15.0,
-                  ),
-                  child: Text(
-                    "World",
-                    style: TextStyle(
-                      color: Colors.black87,
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15.0,
+                      horizontal: 15.0,
+                    ),
+                    child: Text(
+                      "Politics",
                     ),
                   ),
                 ),
-              ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15.0,
-                    horizontal: 15.0,
-                  ),
-                  child: Text(
-                    "World",
-                    style: TextStyle(
-                      color: Colors.black87,
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15.0,
+                      horizontal: 15.0,
+                    ),
+                    child: Text(
+                      "Science",
                     ),
                   ),
                 ),
-              ),
-            ],
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15.0,
+                      horizontal: 15.0,
+                    ),
+                    child: Text(
+                      "Tech",
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         body: TabBarView(
@@ -124,10 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    margin: const EdgeInsets.only(
-                      top: 15.0,
-                    ),
-                    height: 300.0,
+                    height: 370.0,
                     width: MediaQuery.of(context).size.width,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
@@ -172,7 +208,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
-                          height: 300.0,
                           width: MediaQuery.of(context).size.width * .5,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
@@ -307,10 +342,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          margin: const EdgeInsets.only(
-                            top: 15.0,
-                            bottom: 15.0,
-                          ),
                           child: Text(
                             "Trending",
                             style: TextStyle(
