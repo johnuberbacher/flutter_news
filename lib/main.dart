@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.white,
+    statusBarColor: Colors.white,
+  ));
   runApp(MyApp());
 }
 
@@ -20,10 +23,12 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
         appBarTheme: AppBarTheme(
+          brightness: Brightness.light, // status bar brightness
           color: Color(0xFFFFFFFF),
           elevation: 0,
         ),
       ),
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -45,21 +50,21 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(120),
+          preferredSize: Size.fromHeight(125),
           child: AppBar(
             title: Container(
               margin: const EdgeInsets.only(
-                top: 11.0,
+                top: 15.0,
               ),
-              height: 45.0,
+              height: 40.0,
               alignment: Alignment.centerLeft,
               color: Colors.white,
               child: TextField(
-                style: TextStyle(
-                  height: 3.1,
-                ),
                 decoration: InputDecoration(
-                  hintText: 'Search',
+                  hintText: 'search..',
+                  hintStyle: TextStyle(
+                    fontSize: 15.0,
+                  ),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.only(
                       right: 20.0,
@@ -68,9 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   filled: true,
                   fillColor: Color(0xFFFFFFFF),
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 20.0,
-                    horizontal: 25.0,
+                  contentPadding: const EdgeInsets.only(
+                    top: 5.0,
+                    left: 25.0,
+                    right: 25.0,
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
@@ -80,12 +86,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.blueGrey.withOpacity(0.15),
                     ),
                   ),
-                  border: OutlineInputBorder(
+                  enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(30),
                     ),
                     borderSide: BorderSide(
-                      color: Colors.grey.withOpacity(0.15),
+                      color: Colors.grey.withOpacity(0.25),
                     ),
                   ),
                 ),
@@ -168,57 +174,67 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        Container(
-                          margin: const EdgeInsets.only(
-                            top: 15.0,
-                            left: 15.0,
-                          ),
-                          child: Align(
-                            alignment: Alignment.bottomLeft,
-                            child: Container(
-                              margin: const EdgeInsets.all(15.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.only(bottom: 10.0),
-                                    child: Text(
-                                      'Lorem Ipsum Dolor Sit Amet',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 22.0,
-                                        fontWeight: FontWeight.w900,
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TrendingScreen()),
+                            );
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * .6,
+                            margin: const EdgeInsets.only(
+                              top: 15.0,
+                              left: 15.0,
+                            ),
+                            child: Align(
+                              alignment: Alignment.bottomLeft,
+                              child: Container(
+                                margin: const EdgeInsets.all(15.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 10.0),
+                                      child: Text(
+                                        'Lorem Ipsum Dolor Sit Amet',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 22.0,
+                                          fontWeight: FontWeight.w900,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(bottom: 3.0),
-                                    child: Text(
-                                      'Posted By ___',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 13.0,
-                                        fontWeight: FontWeight.w500,
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.only(bottom: 3.0),
+                                      child: Text(
+                                        'Posted By ___',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 13.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.black,
+                                image: DecorationImage(
+                                    colorFilter: new ColorFilter.mode(
+                                        Colors.black.withOpacity(0.75),
+                                        BlendMode.dstATop),
+                                    image: AssetImage(
+                                        "assets/images/nfl-stock.png"),
+                                    fit: BoxFit.cover)),
                           ),
-                          width: MediaQuery.of(context).size.width * .5,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: Colors.black,
-                              image: DecorationImage(
-                                  colorFilter: new ColorFilter.mode(
-                                      Colors.black.withOpacity(0.75),
-                                      BlendMode.dstATop),
-                                  image:
-                                      AssetImage("assets/images/nfl-stock.png"),
-                                  fit: BoxFit.cover)),
                         ),
                         Container(
                           margin: const EdgeInsets.only(
@@ -261,7 +277,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           height: 300.0,
-                          width: MediaQuery.of(context).size.width * .5,
+                          width: MediaQuery.of(context).size.width * .6,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               color: Colors.black,
@@ -314,7 +330,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           height: 300.0,
-                          width: MediaQuery.of(context).size.width * .5,
+                          width: MediaQuery.of(context).size.width * .6,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             color: Colors.black,
@@ -345,14 +361,20 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Text(
                             "Trending",
                             style: TextStyle(
-                              fontSize: 24.0,
+                              fontSize: 22.0,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
                         Container(
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TrendingScreen()),
+                              );
+                            },
                             color: Colors.blue,
                             shape: RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(30.0),
@@ -414,46 +436,50 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                               ),
-                              Container(
-                                margin: const EdgeInsets.all(15.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 10.0),
-                                      child: Container(
-                                        child: Text(
-                                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit iusmod.',
-                                          softWrap: true,
-                                          style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.w800,
+                              Expanded(
+                                child: Container(
+                                  margin: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 10.0),
+                                        child: Container(
+                                          child: Text(
+                                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit iusmod.',
+                                            softWrap: true,
+                                            style: TextStyle(
+                                              color: Colors.black87,
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.w800,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 3.0),
-                                      child: Text(
-                                        'Posted By ___',
-                                        style: TextStyle(
-                                          color: Colors.black87,
-                                          fontSize: 12.0,
-                                          fontWeight: FontWeight.w500,
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 3.0),
+                                        child: Text(
+                                          'Posted By ___',
+                                          style: TextStyle(
+                                            color: Colors.black87,
+                                            fontSize: 12.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Container(
+                          width: 350.0,
                           margin: const EdgeInsets.only(
                             top: 15.0,
                             bottom: 15.0,
@@ -472,23 +498,27 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ],
                           ),
-                          width: MediaQuery.of(context).size.width * .875,
                           child: Row(
                             children: [
                               Container(
                                 width: 120.0,
                                 decoration: BoxDecoration(
+                                  borderRadius: new BorderRadius.only(
+                                    topLeft: Radius.circular(15),
+                                    bottomLeft: Radius.circular(15),
+                                  ),
                                   color: Colors.black,
                                   image: DecorationImage(
-                                      colorFilter: new ColorFilter.mode(
-                                          Colors.black.withOpacity(0.75),
-                                          BlendMode.dstATop),
-                                      image: AssetImage(
-                                          "assets/images/business-stock.jpg"),
-                                      fit: BoxFit.cover),
+                                    colorFilter: new ColorFilter.mode(
+                                        Colors.black.withOpacity(0.75),
+                                        BlendMode.dstATop),
+                                    image: AssetImage(
+                                        "assets/images/business-stock.jpg"),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
-                              Container(
+                              Expanded(
                                 child: Container(
                                   margin: const EdgeInsets.all(15.0),
                                   child: Column(
@@ -500,15 +530,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                         padding:
                                             const EdgeInsets.only(bottom: 10.0),
                                         child: Container(
-                                          child: Expanded(
-                                            child: Text(
-                                              'Lorem Ipsum Dolor',
-                                              softWrap: true,
-                                              style: TextStyle(
-                                                color: Colors.black87,
-                                                fontSize: 20.0,
-                                                fontWeight: FontWeight.w800,
-                                              ),
+                                          child: Text(
+                                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit iusmod.',
+                                            softWrap: true,
+                                            style: TextStyle(
+                                              color: Colors.black87,
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.w800,
                                             ),
                                           ),
                                         ),
@@ -520,7 +548,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                           'Posted By ___',
                                           style: TextStyle(
                                             color: Colors.black87,
-                                            fontSize: 13.0,
+                                            fontSize: 12.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
@@ -544,12 +572,200 @@ class _MyHomePageState extends State<MyHomePage> {
             Icon(Icons.directions_bike),
           ],
         ),
+      ),
+    );
+  }
+}
 
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          tooltip: 'Increment',
-          child: Icon(Icons.add),
-        ), // This trailing comma makes auto-formatting nicer for build methods.
+class TrendingScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black87,
+        ),
+        centerTitle: true,
+        title: Text(
+          "Trending",
+          style: TextStyle(
+            color: Colors.black87,
+            fontSize: 18.0,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Container(
+              height: 150.0,
+              width: MediaQuery.of(context).size.width,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    width: 350.0,
+                    margin: const EdgeInsets.only(
+                      top: 15.0,
+                      bottom: 15.0,
+                      left: 15.0,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.25),
+                          spreadRadius: 1,
+                          blurRadius: 10,
+                          offset: Offset(0, 4), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: new BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              bottomLeft: Radius.circular(15),
+                            ),
+                            color: Colors.black,
+                            image: DecorationImage(
+                              colorFilter: new ColorFilter.mode(
+                                  Colors.black.withOpacity(0.75),
+                                  BlendMode.dstATop),
+                              image: AssetImage(
+                                  "assets/images/business-stock.jpg"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: const EdgeInsets.all(15.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 10.0),
+                                  child: Container(
+                                    child: Text(
+                                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit iusmod.',
+                                      softWrap: true,
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 3.0),
+                                  child: Text(
+                                    'Posted By ___',
+                                    style: TextStyle(
+                                      color: Colors.black87,
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 350.0,
+                    margin: const EdgeInsets.only(
+                      top: 15.0,
+                      bottom: 15.0,
+                      left: 15.0,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.25),
+                          spreadRadius: 1,
+                          blurRadius: 10,
+                          offset: Offset(0, 4), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 120.0,
+                          decoration: BoxDecoration(
+                            borderRadius: new BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              bottomLeft: Radius.circular(15),
+                            ),
+                            color: Colors.black,
+                            image: DecorationImage(
+                              colorFilter: new ColorFilter.mode(
+                                  Colors.black.withOpacity(0.75),
+                                  BlendMode.dstATop),
+                              image: AssetImage(
+                                  "assets/images/business-stock.jpg"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: const EdgeInsets.all(15.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 10.0),
+                                  child: Container(
+                                    child: Text(
+                                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit iusmod.',
+                                      softWrap: true,
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        fontSize: 18.0,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 3.0),
+                                  child: Text(
+                                    'Posted By ___',
+                                    style: TextStyle(
+                                      color: Colors.black87,
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
