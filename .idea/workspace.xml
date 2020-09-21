@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -42,22 +49,22 @@
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
     <state x="-1180" y="264" key="FileChooserDialogImpl/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600568013220" />
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1600628696712">
+    <state width="1877" height="116" key="GridCell.Tab.0.bottom" timestamp="1600649251380">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696712" />
-    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1600628696712">
+    <state width="1877" height="116" key="GridCell.Tab.0.bottom/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600649251380" />
+    <state width="1877" height="116" key="GridCell.Tab.0.center" timestamp="1600649251380">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.center/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696712" />
-    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1600628696711">
+    <state width="1877" height="116" key="GridCell.Tab.0.center/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600649251380" />
+    <state width="1877" height="116" key="GridCell.Tab.0.left" timestamp="1600649251380">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.left/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696711" />
-    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1600628696712">
+    <state width="1877" height="116" key="GridCell.Tab.0.left/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600649251380" />
+    <state width="1877" height="116" key="GridCell.Tab.0.right" timestamp="1600649251380">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.right/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600628696712" />
+    <state width="1877" height="116" key="GridCell.Tab.0.right/-1920.0.1920.1019/0.0.1920.1019@-1920.0.1920.1019" timestamp="1600649251380" />
     <state x="-1459" y="152" key="SettingsEditor" timestamp="1600568057112">
       <screen x="-1920" y="0" width="1920" height="1019" />
     </state>
@@ -80,13 +87,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/main.dart</url>
-          <line>117</line>
+          <line>122</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
           <url>file://$PROJECT_DIR$/lib/main.dart</url>
-          <line>369</line>
+          <line>378</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/routes/article.dart</url>
+          <line>4</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/main.dart</url>
+          <line>408</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/main.dart</url>
+          <line>682</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
