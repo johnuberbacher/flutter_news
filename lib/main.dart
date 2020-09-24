@@ -15,6 +15,7 @@ void main() {
     ),
   );
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter News',
       theme: ThemeData(
         // is not restarted.
         primarySwatch: Colors.blue,
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }

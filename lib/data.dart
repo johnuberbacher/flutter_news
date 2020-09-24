@@ -20,11 +20,6 @@ List<CategoryModel> getCategories() {
   categoryList.add(categoryModel);
 
   categoryModel = new CategoryModel();
-  categoryModel.categoryName = "Health";
-  categoryModel.imageUrl = "assets/images/category/health.jpg";
-  categoryList.add(categoryModel);
-
-  categoryModel = new CategoryModel();
   categoryModel.categoryName = "Science";
   categoryModel.imageUrl = "assets/images/category/science.jpg";
   categoryList.add(categoryModel);
